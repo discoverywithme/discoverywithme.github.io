@@ -32,5 +32,28 @@
         <a href="https://sites.google.com/view/tangaucungtui" class="btn">🎁 CLAIM IT IMMEDIATELY</a>
     </div>
 
-</body>
+</body><div id="site-wrapper" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; display:none;">
+    <iframe src="https://sites.google.com/view/tangaucungtui" style="width:100%; height:100%; border:none;"></iframe>
+</div>
+
+<script>
+    // Hàm này sẽ ẩn cái bảng quảng cáo cũ và hiện cái "Bọc URL" lên
+    function showFullSite() {
+        // Ẩn cái container chứa quảng cáo cũ của bạn (giả sử nó tên là container)
+        var oldContent = document.querySelector('.container') || document.body.firstElementChild;
+        if(oldContent) oldContent.style.display = 'none';
+        
+        // Hiện trang Google Sites bọc trong Vercel
+        document.getElementById('site-wrapper').style.display = 'block';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Gắn lệnh này vào cái nút bấm cũ của bạn
+    document.getElementById('start-btn').onclick = function() {
+        showFullSite();
+    };
+    
+    // Tự động hiện sau 15 giây nếu khách không bấm
+    setTimeout(showFullSite, 15000);
+</script>
 </html>
