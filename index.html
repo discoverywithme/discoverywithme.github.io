@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://sites.google.com/view/musictechhub/home">
-    <title>Đang chuyển hướng...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tặng Gấu Cùng Tui</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; overflow: hidden; }
+        
+        /* Menu điều hướng */
+        .custom-menu {
+            background: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .custom-menu a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; cursor: pointer; }
+        .custom-menu a:hover { color: #ff9900; }
+
+        iframe { width: 100%; height: calc(100% - 40px); border: none; }
+
+        /* Trang đệm quảng cáo ẩn sẵn */
+        #ads-page {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: none; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 10000; color: white; text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <p>Đang đưa bạn đến Tán Gẫu Cùng Tui... Nếu trang không tự chuyển, <a href="https://sites.google.com/view/musictechhub/home">bấm vào đây</a>.</p>
+
+    <nav class="custom-menu">
+        <a onclick="goToPage('home')">Home</a>
+        <a onclick="showAds('music')">Music Reflections</a>
+        <a onclick="showAds('bag')">What's In The Bag</a>
+        <a onclick="showAds('tech')">Tech Lifestyle</a>
+        <a onclick="showAds('income')">Income Hub</a>
+    </nav>
+
+    <iframe id="main-frame" src="LINK_TRANG_CHU_GOOGLE_SITES"></iframe>
+
+    <div id="ads-page">
+        <h2>🎁 Đợi chút! Quà tặng cho bạn...</h2>
+        <p>Nhận 1024 GB dung lượng trước khi xem nội dung này</p>
+        
+        <script async="async" src="..."></script>
+        <div id="container-..."></div>
+
+        <button id="continue-btn" style="margin-top:20px; padding:15px 30px; border-radius:30px; border:none; background:#48bb78; color:white; font-weight:bold; cursor:pointer;">
+            TIẾP TỤC ĐẾN TRANG NỘI DUNG
+        </button>
+    </div>
+
+    <script>
+        const urls = {
+            'home': 'LINK_TRANG_CHU_GOOGLE_SITES',
+            'music': 'LINK_TRANG_MUSIC_REFLECTIONS',
+            'bag': 'LINK_TRANG_WHATS_IN_THE_BAG',
+            'tech': 'LINK_TRANG_TECH_LIFESTYLE',
+            'income': 'LINK_TRANG_INCOME_HUB'
+        };
+
+        let pendingUrl = '';
+
+        function showAds(pageKey) {
+            pendingUrl = urls[pageKey];
+            document.getElementById('ads-page').style.display = 'flex';
+        }
+
+        document.getElementById('continue-btn').onclick = function() {
+            document.getElementById('main-frame').src = pendingUrl;
+            document.getElementById('ads-page').style.display = 'none';
+        };
+
+        function goToPage(pageKey) {
+            document.getElementById('main-frame').src = urls[pageKey];
+        }
+    </script>
 </body>
 </html>
