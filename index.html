@@ -31,5 +31,58 @@
         <a href="https://sites.google.com/view/musictechhub" class="btn">🎁 Claim It Now ! </a>
     </div>
 
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Tech Hub</title>
+    
+    <style>
+        /* Giữ nguyên style cũ của bạn */
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', Arial, sans-serif; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; overflow: hidden; }
+        .container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); z-index: 10; }
+        .highlight { color: #f6ad55; font-weight: bold; font-size: 24px; }
+        .btn { background: #48bb78; color: white; border: none; padding: 15px 30px; font-size: 20px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 20px; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .ads-box { margin: 20px 0; min-height: 120px; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px; }
+        
+        /* PHẦN THÊM MỚI: Bọc nội dung Google Sites */
+        iframe { width: 100%; height: 100%; border: none; position: absolute; top: 0; left: 0; z-index: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" class="container">
+        <h1>🏠 Welcome to Music Tech Hub!</h1>
+        <p>Please wait a moment to receive your <br> 
+           <span class="highlight">1024 GB STORAGE</span>
+        </p>
+        
+        <div class="ads-box">
+            <div id="container-d44fe2243e527b84ce023f7ae04a32a2">
+                <script async="async" data-cfasync="false" src="https://pl28583982.effectivegatecpm.com/d44fe2243e527b84ce023f7ae04a32a2/invoke.js"></script>
+            </div>
+        </div>
+
+        <p id="status">System is redirecting in 15 seconds...</p>
+        
+        <button onclick="enterSite()" class="btn">🎁 CLAIM IT IMMEDIATELY</button>
+    </div>
+
+    <iframe src="https://sites.google.com/view/musictechhub"></iframe>
+
+    <script>
+        // Tự động tắt lớp phủ sau 15 giây
+        setTimeout(enterSite, 15000);
+
+        function enterSite() {
+            document.getElementById('overlay').style.display = 'none';
+            // Cho phép cuộn trang sau khi vào web
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        }
+    </script>
+
 </body>
+</html>
 </html>
